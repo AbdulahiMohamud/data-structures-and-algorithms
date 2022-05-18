@@ -9,8 +9,8 @@
 First for loop was used to add first half of values; add the valuse manually;
 use the second for loop for second half to complete new array.
 
-Technically it is O(2n) but from research constant is dropped and is O(n)
+For Time is O(n2) since i have two loops running in the code.
 
-I think the space complexity is O(n) since a new array is added with 1 more value in linear manner.
+for space its O(n) since im not doing it in place, and making a new Array
 
 #### Work Time: 1.5 hours
