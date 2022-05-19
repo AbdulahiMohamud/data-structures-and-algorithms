@@ -14,3 +14,21 @@ Path:
 Method: `reverseArray`
 
 Work Time: 30 minutes
+
+
+
+
+## Challenge 02
+
+[Challenge 2 readme](./datastructures/challengesReadme/challengs02/readme.md)
+Method: `reverseArray`
+
+Work Time: 30 minutes
+
+## Challenge 03
+
+[Challenge 3 readme](./datastructures/challengesReadme/Challenge03/readme.md)
+
+Method: `reverseArray`
+
+Work Time: 30 minutes
