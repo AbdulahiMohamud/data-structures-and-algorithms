@@ -32,3 +32,13 @@ Work Time: 60 minutes
 Method: `binary serch`
 
 Work Time: 45 minutes
+
+## Challenge 05
+
+conributors: Raul and rodger
+
+Location:[code challenge](./codechallenges/linkedlist/LinkedListChallenges)
+
+Method: linkedListChallenge05()
+
+Work time: 2 hours
