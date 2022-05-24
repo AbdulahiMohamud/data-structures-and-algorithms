@@ -52,3 +52,13 @@ Location:[code challenge](./datastructures/challengesReadme/challenge06/readme.m
 Method: linkedListChallenge05()
 
 Work time: 6 hours
+
+## Challenge 07
+
+conributors:  rodger Reyes
+
+Location:[code challenge](./datastructures/challengesReadme/challenge07/readme.md)
+
+Method: linkedListChallenge05()
+
+Work time: 1 hours
