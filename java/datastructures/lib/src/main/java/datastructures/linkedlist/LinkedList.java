@@ -1,12 +1,14 @@
 package datastructures.linkedlist;
 
-public class LinkedList
+public class LinkedList<T>
 {
-  Node head = null;
-  Node tail = null;
+  Node<T> head = null;
+  Node<T> tail = null;
+  int count;
 
-  public void insert(int value) {
-    Node newNode = new Node(value);
+  public void insert(T value) {
+    Node<T> newNode = new Node<>(value);
+    count++;
     if (head != null) {
       newNode.next = head;
     }
@@ -17,9 +19,9 @@ public class LinkedList
   }
 
 
-  public boolean includes(int value) {
+  public boolean includes(T value) {
     if( head == null) return false;
-    Node currentNode = head;
+    Node<T> currentNode = head;
     while(currentNode != null){
       if(currentNode.value== value){
         return true;
@@ -29,10 +31,10 @@ public class LinkedList
     return false;
   }
 
-  public void append (int value) {
-    Node newNode = new Node (value);
+  public void append (T value) {
+    Node<T> newNode = new Node<> (value);
     if (head != null) {
-      Node current;
+      Node<T> current;
       current = head;
       while (current.next != null) {
         current = current.next;
@@ -41,11 +43,12 @@ public class LinkedList
     } else {
       head = newNode;
     }
+    count++;
   }
-  public void insertBefore (int value , int target) {
-    Node newNode = new Node(value);
-    Node current = head;
-    Node pre = null;
+  public void insertBefore (T value , T target) {
+    Node<T> newNode = new Node<>(value);
+    Node<T> current = head;
+    Node<T> pre = null;
     while (current.value != target) {
       pre = current;
       current = current.next;
@@ -56,10 +59,11 @@ public class LinkedList
     }else  {
       head = newNode;
     }
+    count++;
     }
-  public void insertAfter(int value, int target){
-    Node newNode = new Node(value);
-    Node current = head;
+  public void insertAfter(T value, T target){
+    Node<T> newNode = new Node<>(value);
+    Node<T> current = head;
     while(current != null){
       if(current.value == target){
         newNode.next = current.next;
@@ -70,6 +74,22 @@ public class LinkedList
       }
       current = current.next;
     }
+    count++;
+  }
+
+  public T kthFromEnd(int k){
+    int target = count - k;
+    Node<T> current = head;
+    for(int i = 0; i < target; i++){
+      if(i == target - 1){
+        return current.value;
+      }
+      if(k >= count || k < 0){
+        throw new IllegalArgumentException("position " + k + " is not on the list");
+      }
+      current = current.next;
+    }
+    throw new IllegalArgumentException("position " + k + " is not on the list");
   }
 
 
