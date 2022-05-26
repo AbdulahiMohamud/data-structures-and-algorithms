@@ -24,7 +24,7 @@ public class LinkedListTest {
     LinkedList newList = new LinkedList();
     newList.insert(7);
     newList.insert(2);
-    assertEquals(newList.toString(), "[7]->[2]->NULL");
+    assertEquals(newList.toString(), "[2]->[7]->NULL");
   }
 
   @Test
@@ -102,6 +102,48 @@ public class LinkedListTest {
     sut.append(12);
     assert(sut.kthFromEnd(0) == 12);
   }
+  @Test
+  void zipListMethodretuensTrue()
+  {
+    LinkedList<Integer> sut = new LinkedList<>();
+    sut.append(1);
+    sut.append(2);
+    sut.append(3);
+    assertTrue(sut.zipList(sut));
+  }
+  @Test
+  void zipListMethodThrows()
+  {
+    LinkedList<Integer> sut = new LinkedList<>();
+    assertFalse(sut.zipList(sut));
+  }
+
+  @Test
+  void zipListMethodlongerShorterReturnsTrueandLinkList()
+  {
+    LinkedList<Integer> sut = new LinkedList<>();
+    LinkedList<Integer> other = new LinkedList<>();
+    other.append(20);
+    other.append(10);
+    sut.append(1);
+    sut.append(2);
+    sut.append(3);
+    assertTrue(sut.zipList(other));
+    assertEquals("[1]->[20]->[2]->[10]->[3]->NULL",sut.toString());
+  }
+  @Test
+  void zipListMethodShorterLongerReturnsTrue()
+  {
+    LinkedList<Integer> sut = new LinkedList<>();
+    LinkedList<Integer> other = new LinkedList<>();
+    other.append(1);
+    other.append(2);
+    other.append(1);
+    sut.append(2);
+    sut.append(3);
+    assertTrue(sut.zipList(other));
+  }
+
 
 
 }

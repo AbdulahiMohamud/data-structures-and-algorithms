@@ -93,6 +93,8 @@ public class LinkedList<T>
   }
 
 
+
+
   // Roger toString the wrong way
   @Override
   public String toString(){
@@ -108,6 +110,33 @@ public class LinkedList<T>
     response += "NULL";
     return response;
   }
+
+  public boolean zipList (LinkedList<T> otherList){
+    try {
+      Node<T> tempAlpha = this.head;
+      Node<T> tempBravo = otherList.head;
+      Node<T> tempCharlie = this.head.next;
+
+      while (tempAlpha.next != null){
+        tempCharlie = tempAlpha.next;
+
+        tempAlpha.next = tempBravo;
+        otherList.head = otherList.head.next;
+        tempBravo.next = tempCharlie;
+        tempBravo = otherList.head;
+        tempAlpha = tempCharlie;
+
+      }
+      tempAlpha.next = tempBravo;
+
+    }catch (Exception ex){
+      System.out.println("something went wrong: " + ex.getMessage());
+      return false;
+
+    }
+
+  return true;
+}
 
 
 //  @Override
