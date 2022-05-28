@@ -18,3 +18,6 @@ enqueue(): adds node to front of Queue
 dequeue(): removes node from front of Queue and returns the node's value
 peek(): returns the front nodes value
 isEmpty(): returns true if the queue is empty
+
+## Collaborator 
+Roger Reyes
