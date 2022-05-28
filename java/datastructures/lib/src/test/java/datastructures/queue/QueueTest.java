@@ -2,6 +2,8 @@ package datastructures.queue;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class QueueTest {
@@ -44,6 +46,12 @@ class QueueTest {
     Queue<Integer> sut = new Queue<>();
     sut.enqueue(4);
     assertEquals(4,sut.peek());
+  }
+  @Test
+  void peekReturnsExecption(){
+    Queue<String> sut = new Queue<>();
+    assertThrows(NoSuchElementException.class, () ->{sut.peek();});
+
   }
 
   @Test
