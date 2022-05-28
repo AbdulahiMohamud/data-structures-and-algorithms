@@ -2,6 +2,8 @@ package datastructures.stack;
 
 import datastructures.linkedlist.Node;
 
+import java.util.NoSuchElementException;
+
 public class Stack <T>{
 
   Node<T> top = null;
@@ -26,6 +28,10 @@ public class Stack <T>{
   }
 
   public T peek(){
+    if(top == null){
+      throw new NoSuchElementException("Stack is empty");
+    }
+
     return top.value;
   }
 
