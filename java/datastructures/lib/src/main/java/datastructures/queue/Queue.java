@@ -2,7 +2,6 @@ package datastructures.queue;
 
 
 import datastructures.linkedlist.Node;
-
 import java.util.NoSuchElementException;
 
 public class Queue<T>
@@ -55,5 +54,13 @@ public class Queue<T>
     }
     string.append("NULL");
     return string.toString();
+  }
+
+  public Node<T> getFront() {
+    return front;
+  }
+
+  public Node<T> getRear() {
+    return rear;
   }
 }
