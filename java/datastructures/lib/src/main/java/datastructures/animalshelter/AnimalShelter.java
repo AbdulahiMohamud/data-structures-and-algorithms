@@ -31,7 +31,7 @@ public class AnimalShelter<T> {
     // assigning the reference
     Node<Animal> curr = shelter.getFront();
     Node<Animal> checker = curr.next;
-    // iterating if value is naot equal to pref and if the checker node is not null
+    // iterating if value is not equal to pref and if the checker node is not null
     while(checker.value.getPet() != pref && checker != null){
       // assigns the node to the next one.
       checker = checker.next;
