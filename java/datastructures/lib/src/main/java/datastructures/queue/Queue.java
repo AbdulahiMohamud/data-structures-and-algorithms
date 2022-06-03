@@ -12,10 +12,13 @@ public class Queue<T>
   public void enqueue(T value)
   {
     Node<T> newNode = new Node<>(value);
-    if (front != null) {
-      newNode.next = front;
+    if (front == null) {
+      front = newNode;
+      rear = newNode;
+    } else {
+    rear.next = newNode;
+    rear =rear.next;
     }
-    front = newNode;
   }
 
   public T dequeue()
