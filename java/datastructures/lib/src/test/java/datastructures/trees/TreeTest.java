@@ -51,5 +51,18 @@ class TreeTest {
 
     assertEquals("[2, 3, 1]",results.toString());
   }
+  @Test
+  void maxValueOfTree()
+  {
+    BinaryTree<Integer> sut = new BinaryTree<>();
+    Node<Integer> newNode5 = new Node<>(130);
+    Node<Integer> newNode4 = new Node<>(29);
+    Node<Integer> newNode3 = new Node<>(20);
+    sut.root = newNode5;
+    sut.root.setRight(newNode3);
+    sut.root.setLeft(newNode4);
+
+    assertEquals(130, sut.maxValue());
+  }
 
 }
