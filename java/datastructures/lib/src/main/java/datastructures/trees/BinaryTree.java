@@ -7,6 +7,8 @@ public class BinaryTree<T> {
   public Node<T> root;
   ArrayList<T> data = new ArrayList<>();
 
+  int max = Integer.MIN_VALUE;
+
 
   public BinaryTree() {
   }
@@ -48,6 +50,34 @@ public class BinaryTree<T> {
     return data;
 
   }
+
+  public int maxValue(){
+
+    maxHelper((Node<Integer>) root);
+
+    return max;
+  }
+
+
+   void maxHelper (Node<Integer> root) {
+    if (root == null)
+    {
+      throw new IllegalArgumentException("Tree is empty");
+    }
+
+    if(root.getValue() > max)
+    {
+      max = root.getValue();
+    }
+    if(root.getLeft() != null){
+      maxHelper(root.getLeft());
+    }
+    if(root.getRight() != null){
+      maxHelper(root.getRight());
+    }
+  }
+
+
 
 
 
