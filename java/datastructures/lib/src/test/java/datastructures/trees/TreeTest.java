@@ -65,4 +65,16 @@ class TreeTest {
     assertEquals(130, sut.maxValue());
   }
 
+  @Test
+  void getsArrayOfAllDataUsingBreadthFirst() {
+    BinaryTree<Integer> sut = new BinaryTree<>();
+    Node<Integer> newNode5 = new Node<>(1);
+    Node<Integer> newNode4 = new Node<>(2);
+    Node<Integer> newNode3 = new Node<>(3);
+    sut.root = newNode5;
+    sut.root.setRight(newNode3);
+    sut.root.setLeft(newNode4);
+
+    assertEquals("[1, 2, 3]",sut.breadthFirst().toString());
+  }
 }

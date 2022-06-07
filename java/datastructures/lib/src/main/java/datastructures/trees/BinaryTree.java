@@ -1,5 +1,7 @@
 package datastructures.trees;
 
+import datastructures.queue.Queue;
+
 import java.util.ArrayList;
 
 public class BinaryTree<T> {
@@ -78,8 +80,28 @@ public class BinaryTree<T> {
   }
 
 
+  public ArrayList<T> breadthFirst() {
+    ArrayList<T> results = new ArrayList<>();
+    Queue<Node<T>> queue = new Queue();
+    queue.enqueue(root);
+    Node<T> first;
+    while (!queue.isEmpty()) {
+      first = queue.dequeue();
+      results.add(first.getValue());
 
+      if (first.getLeft() != null)
+        queue.enqueue(first.getLeft());
+      if (first.getRight() != null)
+        queue.enqueue(first.getRight());
+    }
 
+    return results;
 
+  }
 }
+
+
+
+
+
 
