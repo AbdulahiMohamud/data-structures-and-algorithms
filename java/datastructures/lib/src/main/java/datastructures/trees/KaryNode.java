@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class KaryNode <T>{
 
   T value;
-  ArrayList<KaryNode<T>> childList;
+  ArrayList<KaryNode<T>> childList = new ArrayList<>();
+
 
   public KaryNode() {
 
