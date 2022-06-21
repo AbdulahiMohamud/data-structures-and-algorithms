@@ -138,7 +138,13 @@ public class LinkedList<T>
   return true;
 }
 
+  public Node<T> getHead() {
+    return head;
+  }
 
+  public void setHead(Node<T> head) {
+    this.head = head;
+  }
 //  @Override
 //  public String toString(){
 //    String message = "NULL";
