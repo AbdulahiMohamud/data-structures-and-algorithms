@@ -93,5 +93,22 @@ public class Hashtable<K, V> {
   public int hash(K key) {
     return Math.abs(key.hashCode()) % size;
   }
+
+  public String repetedWord (String str) {
+    String strLower =  str.toLowerCase();
+    String[] strArray = strLower.split("\\W+");
+    Hashtable<String,Integer> hashtable = new Hashtable<String,Integer>(strArray.length);
+    for ( int i = 0; i< strArray.length; i++) {
+      if (hashtable.contains(strArray[i])){
+        return strArray[i];
+      }
+      else {
+        hashtable.set(strArray[i],i);
+      }
+    }
+
+      return "No Repeated Words";
+
+  }
 }
 
