@@ -8,15 +8,15 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-public class Hashtable<K, V> {
+public class Hashmap<K, V> {
 
   ArrayList<LinkedList<HashMapPair<K, V>>> bucketArrayList;  // using ArrayList instead of array so we can instantiate with a parameterized type
   int size;
 
-  public Hashtable() {
+  public Hashmap() {
   }
 
-  public Hashtable(int size) {
+  public Hashmap(int size) {
     if (size < 1) {
       throw new IllegalArgumentException("HashMap size must be 1 or greater!");
     }
@@ -97,13 +97,13 @@ public class Hashtable<K, V> {
   public String repetedWord (String str) {
     String strLower =  str.toLowerCase();
     String[] strArray = strLower.split("\\W+");
-    Hashtable<String,Integer> hashtable = new Hashtable<String,Integer>(strArray.length);
+    Hashmap<String,Integer> hashmap = new Hashmap<String,Integer>(strArray.length);
     for ( int i = 0; i< strArray.length; i++) {
-      if (hashtable.contains(strArray[i])){
+      if (hashmap.contains(strArray[i])){
         return strArray[i];
       }
       else {
-        hashtable.set(strArray[i],i);
+        hashmap.set(strArray[i],i);
       }
     }
 
