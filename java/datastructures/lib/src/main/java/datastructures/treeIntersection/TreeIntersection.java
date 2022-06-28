@@ -1,4 +1,4 @@
-package datastructures.stack.treeIntersection;
+package datastructures.treeIntersection;
 
 import datastructures.hashMap.Hashmap;
 import datastructures.trees.BinaryTree;
