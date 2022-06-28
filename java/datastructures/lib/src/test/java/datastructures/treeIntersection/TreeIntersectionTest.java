@@ -12,7 +12,7 @@ class TreeIntersectionTest {
   {
 
   }
-  
+
   @Test
   void test_tree_Intersection2()
   {
