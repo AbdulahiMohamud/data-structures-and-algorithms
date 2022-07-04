@@ -28,6 +28,7 @@ public class Node<T> {
 
   public Node<T> getLeft() {
     return left;
+
   }
 
   public void setLeft(Node<T> left) {
