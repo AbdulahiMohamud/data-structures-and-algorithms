@@ -119,4 +119,11 @@ class GraphTest {
 
 
   }
+
+  @Test
+  void busniessTrip_test()
+  {
+
+  }
+
 }
