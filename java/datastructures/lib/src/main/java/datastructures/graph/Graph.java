@@ -95,5 +95,44 @@ public class Graph<T> {
 
 
 
+  public int businessTrip (Graph<String> graph, String[] cityNames) {
+    int cost = 0;
+    Vertex<String> start = new Vertex<>(cityNames[0]);
+    List<Vertex<String>> vertexList = graph.getVertexListBreadthFirst(start);
+    for (Vertex<String> vertex : vertexList)
+    {
+      if(vertex.value.equals(cityNames[0]))
+      {
+        start = vertex;
+        break;
+      }
+    }
+    for (int i = 1; i < cityNames.length; i++)
+    {
+      boolean connects = false;
+      for (Edge<String> edge : graph.getNeighbours(start))
+      {
+        if(edge.neighbour.value.equals(cityNames[i]))
+        {
+          cost += edge.weight;
+          start = edge.neighbour;
+          connects = true;
+          break;
+        }
+      }
+      if(!connects) return 0;
+    }
+    return cost;
+
+  }
+
+
+
+
+
+
+
+
+
 
 }
