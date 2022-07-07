@@ -116,7 +116,7 @@ class GraphTest {
   for (int i = 0; i<compare.size(); i++) {
     assertEquals(compare.get(i), sut.getVertexListBreadthFirst(v1).get(i).value);
   }
-  
+
 
   }
 }
