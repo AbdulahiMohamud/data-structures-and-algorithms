@@ -2,6 +2,9 @@ package datastructures.graph;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GraphTest {
@@ -87,5 +90,33 @@ class GraphTest {
     Vertex<Integer> v2 = sut.addNode(2);
 
     assertEquals(2,sut.size());
+  }
+
+  @Test
+  void BreadthFirst_Traversal()
+  {
+    Graph<Integer> sut = new Graph<>();
+    Vertex<Integer> v1 = sut.addNode(1);
+    Vertex<Integer> v2 = sut.addNode(2);
+    Vertex<Integer> v3 = sut.addNode(3);
+    Vertex<Integer> v4 = sut.addNode(4);
+
+
+    sut.addEdgeUnidirectional(v1,v3);
+    sut.addEdgeUnidirectional(v1,v4);
+    sut.addEdgeUnidirectional(v4,v2);
+
+    ArrayList<Integer> compare = new ArrayList<>();
+    compare.add(1);
+    compare.add(3);
+    compare.add(4);
+    compare.add(2);
+
+
+  for (int i = 0; i<compare.size(); i++) {
+    assertEquals(compare.get(i), sut.getVertexListBreadthFirst(v1).get(i).value);
+  }
+  
+
   }
 }

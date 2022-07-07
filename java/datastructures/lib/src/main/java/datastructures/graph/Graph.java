@@ -1,5 +1,7 @@
 package datastructures.graph;
 
+import datastructures.queue.Queue;
+
 import java.util.*;
 
 
@@ -58,6 +60,37 @@ public class Graph<T> {
   public int size ()
   {
     return adjVerts.size();
+  }
+
+
+  public List<Vertex<T>> getVertexListBreadthFirst(Vertex<T> ver)
+  {
+    HashSet<T> set = new HashSet<>();
+    List<Vertex<T>> vertexList = new ArrayList<>();
+    Queue<Vertex<T>> queue = new Queue<>();
+
+    set.add(ver.value);
+    queue.enqueue(ver);
+
+    while (!queue.isEmpty())
+    {
+      Vertex<T> current = queue.dequeue();
+      vertexList.add(current);
+
+
+      for (Edge<T> edge : getNeighbours(current))
+      {
+
+        if(!set.contains(edge.neighbour.value))
+        {
+          queue.enqueue(edge.neighbour);
+          set.add(edge.neighbour.value);
+        }
+
+      }
+
+    }
+      return vertexList;
   }
 
 
